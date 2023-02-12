@@ -1,0 +1,59 @@
+body {
+    background-color: gray;
+    color: #ffffff;
+
+
+}
+
+/* make the h1 be 3em and to transition from darkyellow to darkred */
+h1 {
+    transition: all 0.3s ease;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 100px;
+    text-align: center;
+    margin: 10px;
+    color: darkred;
+    font-weight: 900;
+    text-shadow: goldenrod 0px 0px 10px;
+}
+
+
+button {
+    background-color: darkyellow;
+    transition: background-color 0.3s ease;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 1.5em;
+    border: 2px solid darkgoldenrod;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+}
+
+button:hover {
+    background-color: darkred;
+    color: goldenrod;
+ }
+
+/* give a red boarder with with a black outline make the border 40px on the sides and 20 px on the top with 60px on the bottom */
+.container  {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.etch-a-sketch {
+    border: solid darkred;
+    border-width: 20px 40px 80px 40px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 0px 5px darkgoldenrod;
+    height: 960px;
+    width: 960px;
+    align-self: center;
+}
+
+
+ 
+
+ 
