@@ -51,8 +51,13 @@ button:hover {
     height: 960px;
     width: 960px;
     align-self: center;
+    display: flex;
+    flex-wrap: wrap;
 }
 
+.square {
+    background-color: teal;
+}
 
  
 
