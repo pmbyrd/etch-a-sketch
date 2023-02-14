@@ -53,12 +53,19 @@ button:hover {
     align-self: center;
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: space-between;
+    margin: 0px;
+    padding: 0px;
 }
 
 .square {
     background-color: teal;
 }
 
+.square:hover {
+    background-color: whitesmoke;
+}
  
 
  
