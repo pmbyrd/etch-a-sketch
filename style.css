@@ -75,18 +75,21 @@ button:hover {
     justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
-    width: 400px;
+    width: 600px;
     margin: 20px;
     padding: 20px;
 }
 
 .color {
     margin: 10px;
-    height: 60px;
-    width: 60px;
+    height: 40px;
+    width: 80px;
     text-align: center;
     text-shadow: black 0px 0px 20px;
-    
+    border: #ffffff 1px solid;
+    box-shadow: 0px 0px 0px 5px darkgoldenrod;
+    border-radius: 5px;
+    font-family: 'Permanent Marker', cursive;
 }
 
  

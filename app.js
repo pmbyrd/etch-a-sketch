@@ -1,4 +1,9 @@
-// create an array of colors for the user to pick from of 24 crayola colors objects
+console.log("hello world");
+let x = 16;
+let y = 16;
+let grid = [];
+let $EAS = $(".etch-a-sketch");
+let currentColor = "black";
 let colors = [
   "red",
   "orange",
@@ -22,12 +27,19 @@ let colors = [
   "silver",
   "gold",
   "magenta",
-  "fuchsia",
+  "darkgreen",
   "crimson",
 ];
 
-// Todo display colors for the user to pick from
-// Todo create color
+makeDiv(colors);
+makeGrid(x, y);
+displayGrid(x, y);
+
+$(".square").on("mouseover", function () {
+    $(this).css("background-color", currentColor);
+    updateColor();
+});
+
 function makeDiv(colors) {
   $(".colors").empty();
   for (let i = 0; i < colors.length; i++) {
@@ -38,27 +50,9 @@ function makeDiv(colors) {
       .css("background-color", colors[i]);
     $(".colors").append($color);
   }
+
   $(".colors").show();
 }
-
-makeDiv(colors);
-
-console.log("hello world");
-// Todo get user input func (prompt)
-// the user will input the number of squares and that creates a board
-$("button").on("click", function () {
-  let x = getUserInput();
-  makeGrid(x, x);
-  displayGrid(x, x);
-});
-// create a grix where x length is equal to y length
-let x = 16;
-let y = 16;
-let grid = [];
-let $EAS = $(".etch-a-sketch");
-let currentColor = "black";
-makeGrid(x, y);
-displayGrid(x, y);
 
 function makeGrid() {
   for (let i = 0; i < x; i++) {
@@ -67,8 +61,9 @@ function makeGrid() {
       grid[i].push(0);
     }
   }
-}
 
+}
+y
 function createSquare() {
   let $square = $("<div>")
     .addClass("square")
@@ -78,7 +73,7 @@ function createSquare() {
   return $square;
 }
 
-function displayGrid(x, y) {
+function displayGrid() {
   for (let i = 0; i < x; i++) {
     for (let j = 0; j < y; j++) {
       createSquare();
@@ -87,17 +82,28 @@ function displayGrid(x, y) {
   }
 }
 
-// Todo get user input
-function getUserInput() {
-  x = prompt("How many squares wide?");
-  x = parseInt(x);
-  return x;
+// Todo get user input func (prompt)
+function getNumberOfSquares() {
+    x = parseInt(prompt("How many squares wide?"));
+    y = x
+    if (x > 0 && x <= 100) {
+        $EAS.empty(); // clear the grid
+        grid = []; // reset the grid
+        makeGrid(x, y);
+        // Set the container width to the same number of pixels as before (960px)
+        displayGrid(x, y)
+
+        $EAS.css("width", 960 + "px");
+        $(".square").on("mouseover", function () {
+            $(this).css("background-color", currentColor);
+            updateColor();
+          });
+               
+    } else {
+        alert("Please enter a number between 1 and 100");
+    }
 }
 
-$(".square").on("mouseover", function () {
-  $(this).css("background-color", currentColor);
-  updateColor();
-});
 
 function updateColor() {
   $(".color").on("click", function () {
