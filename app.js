@@ -33,8 +33,8 @@ function makeDiv(colors) {
   for (let i = 0; i < colors.length; i++) {
     let $color = $("<div>")
       .addClass("color")
-    //   set the text
-        .text(colors[i])
+      //   set the text
+      .text(colors[i])
       .css("background-color", colors[i]);
     $(".colors").append($color);
   }
@@ -56,6 +56,7 @@ let x = 16;
 let y = 16;
 let grid = [];
 let $EAS = $(".etch-a-sketch");
+let currentColor = "black";
 makeGrid(x, y);
 displayGrid(x, y);
 
@@ -74,7 +75,6 @@ function createSquare() {
     .css("width", 100 / x + "%")
     .css("height", 100 / y + "%");
   $EAS.append($square);
-  $square.on("mouseenter", changeColor);
   return $square;
 }
 
@@ -93,15 +93,15 @@ function getUserInput() {
   x = parseInt(x);
   return x;
 }
-// Todo add event listener to each square
-// Todo make a function to change color on hover
-function changeColor() {
-  if ($(this).hasClass("square")) {
-    // make the css change to black when hovered over but must hover for 800ms
-    // $(this).css("background-color", "black");
-    // add a time to change color
-  }
-}
 
-// *first try with the hover
-// Todo change color of square when clicked
+$(".square").on("mouseover", function () {
+  $(this).css("background-color", currentColor);
+  updateColor();
+});
+
+function updateColor() {
+  $(".color").on("click", function () {
+    currentColor = $(this).text();
+    console.log(currentColor);
+  });
+}

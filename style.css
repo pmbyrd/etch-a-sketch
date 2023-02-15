@@ -1,7 +1,10 @@
 body {
     background-color: gray;
     color: #ffffff;
-
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 
 }
 
@@ -66,6 +69,24 @@ button:hover {
 .square:hover {
     background-color: whitesmoke;
 }
- 
+
+.colors {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 400px;
+    margin: 20px;
+    padding: 20px;
+}
+
+.color {
+    margin: 10px;
+    height: 60px;
+    width: 60px;
+    text-align: center;
+    text-shadow: black 0px 0px 20px;
+    
+}
 
  
